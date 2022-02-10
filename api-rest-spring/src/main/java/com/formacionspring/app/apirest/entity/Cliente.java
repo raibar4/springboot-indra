@@ -23,11 +23,30 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
+	@Column(nullable=false)
 	private String nombre;
+	
+	@Column(nullable=false)
 	private String apellido;
+	
+	@Column(nullable=false, unique=true)
 	private String email;
 	private int telefono;
 	
+	private String imagen;
+	
+	
+	public String getImagen() {
+		return imagen;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+
 	@Column(name="create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
